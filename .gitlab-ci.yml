@@ -241,12 +241,17 @@ algolia_sync_preview:manual:
     - yarn run prebuild
     - build_site
     # end build
-    - yarn add atomic-algolia@https://s3.amazonaws.com/origin-static-assets/corp-node-packages/master/atomic-algolia-v1.0.2.tgz
     - >
-      ALGOLIA_APP_ID=$(get_secret 'algolia_preview_application_id')
-      ALGOLIA_ADMIN_KEY=$(get_secret 'algolia_preview_api_key')
-      CI_PIPELINE_SOURCE=$CI_PIPELINE_SOURCE
-      yarn run algolia:sync
+      TYPESENSE_ADMIN_API_KEY=$(get_secret 'typesense_preview_admin_api_key')
+      TYPESENSE_COLLECTION_NAME=docs_main_v1
+      TYPESENSE_HOST=$(get_secret 'typesense_preview_host')
+      yarn run sync:typesense
+#    - yarn add atomic-algolia@https://s3.amazonaws.com/origin-static-assets/corp-node-packages/master/atomic-algolia-v1.0.2.tgz
+#    - >
+#      ALGOLIA_APP_ID=$(get_secret 'algolia_preview_application_id')
+#      ALGOLIA_ADMIN_KEY=$(get_secret 'algolia_preview_api_key')
+#      CI_PIPELINE_SOURCE=$CI_PIPELINE_SOURCE
+#      yarn run algolia:sync
   rules:
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       when: never
@@ -270,6 +275,23 @@ algolia_sync_live:
       ALGOLIA_ADMIN_KEY=$(get_secret 'algolia_docsearch_api_key')
       CI_PIPELINE_SOURCE=$CI_PIPELINE_SOURCE
       yarn run algolia:sync
+
+typesense_sync_live:
+  <<: *base_template
+  <<: *live_rules
+  stage: post-deploy
+  environment: "live"
+  allow_failure: true
+  interruptible: true
+  timeout: 2h
+  dependencies:
+    - build_live
+  script:
+    - >
+      TYPESENSE_ADMIN_API_KEY=$(get_secret 'typesense_prod_admin_api_key')
+      TYPESENSE_COLLECTION_NAME=docs_main_v1
+      TYPESENSE_HOST=$(get_secret 'typesense_prod_host')
+      yarn run sync:typesense
 
 sourcemaps_preview:
   <<: *base_template

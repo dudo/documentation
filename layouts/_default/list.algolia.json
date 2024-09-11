@@ -37,7 +37,9 @@
             {{- /* Full page record */ -}}
             {{ $record := (
                 dict "objectID" $object_id
+                "id" $object_id
                 "title" $title
+                "section_header" ""
                 "content" $content
                 "type" $page.Type
                 "relpermalink" $page.RelPermalink
@@ -48,6 +50,7 @@
                 "subcategory" $subcategory
                 "rank" $rank
                 "order" -1
+                "tags" (slice)
             ) }}
 
             {{ if $tags }}
