@@ -1,11 +1,11 @@
 const { typesenseSync } = require('typesense-sync');
-const { saveSettings } = require('typesense-sync/settings');
+//const { saveSettings } = require('typesense-sync/settings');
 const config = require('../../../typesense.config.json');
 
-saveSettings()
+/*saveSettings()
     .then(() => index())
     .then(() => console.log('Typesense sync completed'))
-    .catch(error => console.log('An error occurred', error))
+    .catch(error => console.log('An error occurred', error))*/
 
 const index = async () => {
     const promises = []
@@ -18,3 +18,7 @@ const index = async () => {
 
     return Promise.all(promises)
 }
+
+index()
+    .then(() => console.log('Typesense sync completed'))
+    .catch(error => console.log('An error occurred', error))
