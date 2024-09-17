@@ -243,7 +243,7 @@ algolia_sync_preview:manual:
     # end build
     - >
       TYPESENSE_ADMIN_API_KEY=$(get_secret 'typesense_preview_admin_api_key')
-      TYPESENSE_COLLECTION_NAME=docs_main_v1
+      TYPESENSE_COLLECTION_NAME=docs_alias
       TYPESENSE_HOST=$(get_secret 'typesense_preview_host')
       yarn run sync:typesense
 #    - yarn add atomic-algolia@https://s3.amazonaws.com/origin-static-assets/corp-node-packages/master/atomic-algolia-v1.0.2.tgz
