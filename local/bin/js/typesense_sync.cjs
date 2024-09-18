@@ -18,7 +18,3 @@ const index = async () => {
 
     return Promise.all(promises)
 }
-
-index()
-    .then(() => console.log('Typesense sync completed'))
-    .catch(error => console.log('An error occurred', error))
