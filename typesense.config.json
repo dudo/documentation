@@ -9,7 +9,7 @@
                     "synonyms": ["agent", "datadog agent"]
                 },
                 {
-                    "id:": "azure",
+                    "id": "azure",
                     "synonyms": ["microsoft azure", "azure"]
                 },
                 {
