@@ -6550,7 +6550,7 @@ __metadata:
     tomlify-j0.4: ^3.0.0
     traverse: 0.6.8
     typesense: ^1.8.2
-    typesense-sync: "https://s3.amazonaws.com/origin-static-assets/corp-node-packages/master/typesense-sync-v1.0.1.tgz"
+    typesense-sync: "https://s3.amazonaws.com/origin-static-assets/corp-node-packages/master/typesense-sync-v1.0.2.tgz"
     yaml-lint: ^1.7.0
   languageName: unknown
   linkType: soft
@@ -14776,9 +14776,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typesense-sync@https://s3.amazonaws.com/origin-static-assets/corp-node-packages/master/typesense-sync-v1.0.1.tgz":
-  version: 1.0.1
-  resolution: "typesense-sync@https://s3.amazonaws.com/origin-static-assets/corp-node-packages/master/typesense-sync-v1.0.1.tgz"
+"typesense-sync@https://s3.amazonaws.com/origin-static-assets/corp-node-packages/master/typesense-sync-v1.0.2.tgz":
+  version: 1.0.2
+  resolution: "typesense-sync@https://s3.amazonaws.com/origin-static-assets/corp-node-packages/master/typesense-sync-v1.0.2.tgz"
   dependencies:
     "@babel/runtime": ^7.25.0
     crypto: ^1.0.1
@@ -14786,7 +14786,7 @@ __metadata:
     typesense: ^1.8.2
     winston: ^3.14.2
     yargs: ^17.7.2
-  checksum: d4b8a072d3925e4718825076b2771bb357acb44963c5c6be8d773547922713e1af42ab3e8b2641915621caa4db7e1e9c79072f93fed6a72ead80950578322c4f
+  checksum: 2dc2af1f9d1e6d8495f6b18c82fd86fbff152db1b4bb1385ce4634f09f677e6e7fbce8cd56506e76bb6e1758cd683268a04d45ae820433d6321b20f0ebdffaee
   languageName: node
   linkType: hard
 
